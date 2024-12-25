@@ -173,9 +173,9 @@ export default function Dashboard() {
                       </span>
                       <span className="min-w-4 min-h-4">
                         {header.column.getIsSorted() === "asc"
-                          ? "🔼"
+                          ? ""
                           : header.column.getIsSorted() === "desc"
-                          ? "🔽"
+                          ? ""
                           : ""}
                       </span>
                     </div>
