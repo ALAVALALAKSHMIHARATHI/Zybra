@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Theme Colors */
+  --background: #0cc7f6;
+  --foreground: #1d1f2c;
+
+  /* Typography */
+  --primaryfont: "Public Sans";
+  --regular: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1d1f2c;
+    --foreground: #fbfbfb;
+  }
+}
+
+@font-face {
+  font-family: var(--primaryfont);
+  src: url("/fonts/PublicSans-Regular.woff2") format("woff2");
+  font-weight: var(--regular);
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: var(--primaryfont);
+  src: url("/fonts/PublicSans-Italic.woff2") format("woff2");
+  font-weight: var(--regular);
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: var(--primaryfont);
+  src: url("/fonts/PublicSans-Bold.woff2") format("woff2");
+  font-weight: var(--bolds);
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: var(--primaryfont);
+  src: url("/fonts/PublicSans-BoldItalic.woff2") format("woff2");
+  font-weight: var(--bold);
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  @apply font-sans;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans font-semibold;
+  }
+
+  h1,
+  .h1 {
+    @apply text-3xl;
+  }
+  h2,
+  .h2 {
+    @apply text-2xl;
+  }
+  h3,
+  .h3 {
+    @apply text-xl;
+  }
+  h4,
+  .h4 {
+    @apply text-lg;
+  }
+  h5,
+  .h5 {
+    @apply text-base;
+  }
+  h6,
+  .h6 {
+    @apply text-sm;
+  }
+
+  p {
+    @apply font-sans text-lg text-[#777980];
+  }
+
+  a {
+    @apply text-[#2086BF];
+  }
+
+  input,
+  select,
+  textarea {
+    @apply font-sans;
+  }
+  .zybra-btn,
+  button {
+    @apply text-sm font-sans font-semibold flex items-center justify-center gap-1 rounded-lg px-3.5 py-2.5 border duration-500 cursor-pointer w-max;
+  }
+}
+
+/* Custom Scrollbar */
+@layer utilities {
+  ::-webkit-scrollbar {
+    @apply w-1 h-1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#011b3f] rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#0f48a4];
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-[#e5e7eb];
+  }
+}
